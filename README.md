@@ -2,14 +2,39 @@
 
 ### VPS
 
--  搬瓦工 （https://www.bwh8.net/cn2gia-vps.php、https://bandwagonhost.com/cn2gia-vps.php）
+- 搬瓦工 （https://www.bwh8.net/cn2gia-vps.php、https://bandwagonhost.com/cn2gia-vps.php）
+
   -  优惠码（很多人不知道，搬瓦工官网隐藏了一个彩蛋，就是隐藏了优惠码）
-    - 选择完产品，点击Order Now进入页面的时候，别急着点击「Add to Cart」添加到购物车，这里面暗藏着一个优惠码
-    - 使用浏览器查看源代码， chrome浏览器的话按F12，然后搜索「code」
-    - 你会发现有一个 「Try this promo code: xxxx 」，这个xxxx就是优惠码
-    - ![image](https://github.com/koearl/vpn/assets/21996270/dced74f8-c587-476e-9fb9-700b9dfc87e4)
+
+     - 选择完产品，点击Order Now进入页面的时候，别急着点击「Add to Cart」添加到购物车，这里面暗藏着一个优惠码
+     - 使用浏览器查看源代码， chrome浏览器的话按F12，然后搜索「code」
+     - 你会发现有一个 「Try this promo code: xxxx 」，这个xxxx就是优惠码
+     - ![image](https://github.com/koearl/vpn/assets/21996270/dced74f8-c587-476e-9fb9-700b9dfc87e4)
+
+  -  连接到搬瓦工
+
+     -  购买完毕后你就拥有一台你自己的服务器了，接着点击Services下的MyServices，可以看到你的服务器：
+
+     -  ![使用搬瓦工搭建VPN](https://camo.githubusercontent.com/a705a235b477b6f98de91acea6ceaa851793cf9f19d01fbb412e1787109ffb1f/68747470733a2f2f776973746265616e2e6769746875622e696f2f696d616765732f76706e362e706e67)
+
+     -  点击「KiwiVM Control Panel」进入管理界面：
+
+     -  ![使用搬瓦工搭建VPN](https://camo.githubusercontent.com/e1858aa95a56c97f47428ed6d65cb7de0039f63065f32eae24f6949a17cfba95/68747470733a2f2f776973746265616e2e6769746875622e696f2f696d616765732f76706e372e706e67)
+
+     -  可以看到你服务器的信息:
+
+     -  ![使用搬瓦工搭建VPN](https://camo.githubusercontent.com/df80b177ebff9683bbe7ed1c4550cb8fa78f02a7d1d5478f5829050ea5c8e793/68747470733a2f2f776973746265616e2e6769746875622e696f2f696d616765732f76706e392e706e67)
+
+     -  账号是root，密码可以在这里获取：
+
+     -  ![搬瓦工搭建ss](https://camo.githubusercontent.com/612e378ee083b0a95c14260af20fadebe74c5b621c1c785069c16ad0e26c746b/68747470733a2f2f776973746265616e2e6769746875622e696f2f696d616765732f706963322e706e67)
+
+     -  一般来说，菜单下方有一个 openvpn 的快速安装方式，但是据说很容易被强，所以现在不推荐使用这种方式搭建自己的VPN。
+
+        
+
 - 域名
-    namesilo：https://name.bulianglin.com
+  namesilo：https://name.bulianglin.com
 
 ### 节点搭建
 
