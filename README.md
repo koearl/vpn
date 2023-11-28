@@ -45,11 +45,13 @@
 
 ​	当[防火墙](https://zh.m.wikipedia.org/wiki/防火墙_(网络))后的客户端要访问外部的服务器时，就跟SOCKS[代理服务器](https://zh.m.wikipedia.org/wiki/代理服务器)连接。这个代理服务器控制客户端访问外网的资格，允许的话，就将客户端的请求发往外部的服务器。
 
-​	这个协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到SOCKS4。最新协议是SOCKS5，与前一版本相比，增加支持[UDP](https://zh.m.wikipedia.org/wiki/用户数据报协议)、验证，以及[IPv6](https://zh.m.wikipedia.org/wiki/IPv6)。
+​	这个协议最初由David Koblas开发，而后由NEC的Ying-Da Lee将其扩展到SOCKS4。最新协议是SOCKS5，与前一版本相比，增加支持[UDP](https://zh.m.wikipedia.org/wiki/用户数据报协议)、身份验证，以及[IPv6](https://zh.m.wikipedia.org/wiki/IPv6)。
 
-根据[OSI模型](https://zh.m.wikipedia.org/wiki/OSI模型)，SOCKS是[会话层](https://zh.m.wikipedia.org/wiki/会话层)的协议，位于[表示层](https://zh.m.wikipedia.org/wiki/表示层)与[传输层](https://zh.m.wikipedia.org/wiki/传输层)之间。
+​	SOCKS是一种网络传输协议，主要用于客户端与外网服务器之间通讯的中间传递。根据[OSI模型](https://zh.m.wikipedia.org/wiki/OSI模型)，SOCKS是[会话层](https://zh.m.wikipedia.org/wiki/会话层)的协议，位于[表示层](https://zh.m.wikipedia.org/wiki/表示层)与[传输层](https://zh.m.wikipedia.org/wiki/传输层)之间。
 
 ![TCP/IP_Protocol.png](https://i.loli.net/2020/10/15/QWDC8PHZRobkSr5.png)
+
+![img](https://upload-images.jianshu.io/upload_images/28790576-c46649f257b0481f.png?imageMogr2/auto-orient/strip|imageView2/2/w/582/format/webp)
 
 ## 2.概述
 
@@ -67,7 +69,7 @@
 
 3. #### V2ray？
 
-   V2Ray 是在Shadowsocks 被封杀之后，为了表示抗议而开发的，属于后起之秀，功能更加强大，为抗GFW封锁而生。
+   ​	V2Ray 是在Shadowsocks 被封杀之后，为了表示抗议而开发的，属于后起之秀，功能更加强大，为抗GFW封锁而生。
 
    ​	V2Ray 现在已经是 Project V 项目的核心工具，而 Project V 是一个平台，其中也包括支持 Shadowsocks 协议。由于 V2Ray 早于 Project V 项目，而且名声更大，所以我们习惯称 Project V 项目为 V2Ray，所以我们平时所说的 V2Ray 其实就是 Project V 这个平台，也就是一个工具集。其中，只有 VMess协议是V2Ray社区原创的专属加密通讯协议，被广泛应用于梯子软件。
 
@@ -115,16 +117,16 @@ VPN、SS/SSR、V2Ray/Xray 和 Trojan/Trojan-Go 优缺点
 
 ### 3.1 原理不同
 
-VPN强调对公网传输过程中数据的加解密，SS/SSR/V2Ray/Xray/Trojan都是专注于在客户端和服务器端加解密，公网传输数据过程中特征没有VPN明显。
+​	VPN强调对公网传输过程中数据的加解密，SS/SSR/V2Ray/Xray/Trojan都是专注于在客户端和服务器端加解密，公网传输数据过程中特征没有VPN明显。
 
 ### 3.2 目的不同
 
-VPN是走在公网中自建的虚拟专用通道，使用强大的加解密算法，为数据传输安全性、私密性而生，被广泛应用于企业、高校、科研部门等远程数据传输的领域；SS/SSR/V2Ray/Xray/Trojan/Trojan-Go是为了数据能够安全通过GFW而生，更强调的是对数据的混淆和伪装，加解密只是为了更好的隐藏数据特征而顺利绕过GFW的检测，数据内容加密可以有效绕过关键词的检测。
+​	VPN是走在公网中自建的虚拟专用通道，使用强大的加解密算法，为数据传输安全性、私密性而生，被广泛应用于企业、高校、科研部门等远程数据传输的领域；SS/SSR/V2Ray/Xray/Trojan/Trojan-Go是为了数据能够安全通过GFW而生，更强调的是对数据的混淆和伪装，加解密只是为了更好的隐藏数据特征而顺利绕过GFW的检测，数据内容加密可以有效绕过关键词的检测。
 
 | 项目名称      | 创建时间   | 支持协议                                               | 对比                                                         |
 | :------------ | :--------- | :----------------------------------------------------- | :----------------------------------------------------------- |
-| Shadowsocks   | 2015年前   | sock5                                                  |                                                              |
-| Shadowsocks-R | 2016年前后 | sock5+混淆协议                                         |                                                              |
+| Shadowsocks   | 2015年前   | socks5                                                 |                                                              |
+| Shadowsocks-R | 2016年前后 | socks5+混淆协议                                        |                                                              |
 | V2Ray         | 2019下半年 | Blackhole Freedom HTTP MTProto Shadowsocks Socks VMess | V2ray比较成熟，支持的配套客户端是最多的，隐秘性良好          |
 | Trojan        | 2019年底   | 类似V2ray“WS+TLS”模式的精简版                          | 相比V2ray，速度更快，更轻量级，相比trojan-go 比较老了，因此排名后面 |
 | Trojan-Go     | 2020年8月  | 类似V2ray“WS+TLS”模式的精简版                          | 速度方面次于Xray、隐秘更强，客户端比较单一                   |
@@ -134,7 +136,7 @@ VPN是走在公网中自建的虚拟专用通道，使用强大的加解密算�
 
 ​	socks5 代理的原理是把你的网络数据请求先发送到你的代理服务器，然后由代理服务器转发给目标；如果目标有反馈发送到代理服务器，那么代理服务器会将数据包直接传回你的本地网络，整个过程只是数据的二次传输，并没有做额外的处理。比如，现在你在深圳，你的代理服务器在日本，如果你想要访问Google，那么你首先要把数据请求通过本地 socks5 代理客户端发给你在香港的服务器上的 socks5 代理服务端，然后你在香港的服务器将数据请求发送给Google，再把Google反馈的结果传回你的本地电脑的 socks5 客户端，这样就可以绕开GFW的检测而实现科学上网。
 
-显而易见，socks5代理的所有数据走的仍然是公网，而且在公网传输过程中，没有对数据进行任何加密和混淆，这跟VPN在公网建立虚拟专用通道传输过程中，对数据高强度加密的方式完全不同。Shadowsocks 和 ShadowsocksR 只在客户端和服务器端对数据做了简单加密和认证，主要功能是流量转发，过墙才是主要目的。虽然现在 ShadowsocksR 已经停止更新很久了，而 Shadowsocks 仍处于社区人员的更新维护之中，不断修复漏洞并增加新功能，所以现在 Shadowsocks 比 ShadowsocksR 更强大。
+​	显而易见，socks5代理的所有数据走的仍然是公网，而且在公网传输过程中，没有对数据进行任何加密和混淆，这跟VPN在公网建立虚拟专用通道传输过程中，对数据高强度加密的方式完全不同。Shadowsocks 和 ShadowsocksR 只在客户端和服务器端对数据做了简单加密和认证，主要功能是流量转发，过墙才是主要目的。虽然现在 ShadowsocksR 已经停止更新很久了，而 Shadowsocks 仍处于社区人员的更新维护之中，不断修复漏洞并增加新功能，所以现在 Shadowsocks 比 ShadowsocksR 更强大。
 
 ## 5. 总结
 
